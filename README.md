@@ -83,7 +83,7 @@ Then, in the command line:
 
 Now navigate to http://[yourappname].herokuapp.com/surveys
 
-you can visit this tutorials example here: [http://surveyor-example.herokuapp.com/surveys](http://surveyor-example.herokuapp.com/surveys)
+you can visit the example for this tutorial here: [http://surveyor-example.herokuapp.com/surveys](http://surveyor-example.herokuapp.com/surveys)
 
 13) Try making your own survey
 
