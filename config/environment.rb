@@ -3,3 +3,7 @@ require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
 SurveyorExample::Application.initialize!
+
+Rails::Initializer.run do |config| 
+  config.gem "surveyor"
+end
