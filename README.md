@@ -83,6 +83,8 @@ Then, in the command line:
 
 Now navigate to http://[yourappname].herokuapp.com/surveys
 
+you can visit this tutorials example here: [http://surveyor-example.herokuapp.com/surveys](http://surveyor-example.herokuapp.com/surveys)
+
 13) Try making your own survey
 
 Create a new file in the surveys folder of your project, name it 'my_survey.rb' and edit it as you like.
@@ -90,5 +92,18 @@ Create a new file in the surveys folder of your project, name it 'my_survey.rb' 
 14) Parse the survey
 
     $ bundle exec rake surveyor FILE=surveys/my_survey.rb  
+
+15) Try it on the local server    
+
+    $ rails s
+
+And visit: [http://localhost:3000/surveys](http://localhost:3000/surveys)
+
+16) Try it on Heroku
+
+    $ heroku run rake surveyor FILE=surveys/my_survey.rb
+    $ heroku open
+
+Now navigate to http://[yourappname].herokuapp.com/surveys
 
 
