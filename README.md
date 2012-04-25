@@ -45,5 +45,31 @@ If this happens to you, run the following in your command line:
     $ heroku create --stack cedar
     $ git push heroku master
 
+8) Generate surveyor assets
+
+    $ script/rails generate surveyor:install
+
+9) Migrate the database (If you received the rake version error above, be sure to include 'bundle exec' before your rake command)
+
+    $ bundle exec rake db:migrate        
+
+10) Try out the 'kitchen sink' survey
+
+    $ bundle exec rake surveyor FILE=surveys/kitchen_sink_survey.rb
+
+11) Test it on the local server (start the server)
+
+    $ rails s
+
+And visit: [http://localhost:3000/surveys](http://localhost:3000/surveys)
+
+12) Deploy and test it on Heroku
+
+    $ git add .
+    $ git commit -am "Installed surveyor assets"
+    $ git push
+    $ git push heroku
+    $ heroku run rake db:migrate
+    
 
 
