@@ -70,6 +70,6 @@ And visit: [http://localhost:3000/surveys](http://localhost:3000/surveys)
     $ git push
     $ git push heroku
     $ heroku run rake db:migrate
-    
+    $ heroku run rake surveyor FILE=surveys/kitchen_sink_survey.rb
 
 
