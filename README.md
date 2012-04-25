@@ -2,9 +2,9 @@
 - - -
 The [NUBIC/surveyor gem](https://github.com/NUBIC/surveyor) is an awesome ruby gem and developer tool that brings surveys into Rails applications. Surveys are written in the Surveyor DSL (Domain Specific Language). If your Rails app needs to asks users questions as part of a survey, quiz, or questionnaire then you should consider using Surveyor.
 
-This tutorial is to help Rails beginners implement and extend this gem in their Rails project.  The "kitchen sink" Survey in the [surveyor README](https://github.com/NUBIC/surveyor#readme) is a great place to get started, as is the "extending surveyor" README.  However, for beginners, I thought it might be useful to have an example that walks through how to tie the surveyor gem to your user model and make some basic customizations.
+This tutorial is to help Rails beginners implement and extend this gem in their Rails project.  The "kitchen sink" Survey in the [surveyor README](https://github.com/NUBIC/surveyor#readme) is a great place to get started, as is the "extending surveyor" README.  However, for beginners, I thought it might be useful to have an example that walks through how to tie the surveyor gem to your user model and make some basic customizations.  For this tutorial I am using Rails 3.2.3 and Ruby 1.9.3p125 (2012-02-16 revision 34643) [x86_64-darwin10.8.0].
 
-Surveyor Tutorial
+#Surveyor Tutorial
 - - -
 
 1) Create a new repository on [GitHub](https://github.com) named 'surveyor_example'
@@ -18,7 +18,7 @@ Surveyor Tutorial
 
     $ subl .
 
-4) Update the Gemfile. Cut & Paste the contents of this [tutorials Gemfile](https://github.com/diasks2/surveyor_example/blob/master/Gemfile) into your Gemfile
+4) Update the Gemfile. Cut & Paste the contents of this [tutorials Gemfile](https://github.com/diasks2/surveyor_example/blob/master/Gemfile) into your Gemfile.
 
 5) Install and include the new gems
 
@@ -39,5 +39,11 @@ If this happens to you, run the following in your command line:
     $ git commit -m "Initial commit"
     $ git remote add origin git@github.com:<username>/surveyor_example.git
     $ git push -u origin master
+
+7) (Optional) Deploy the app to Heroku. (Assuming you have already created a Heroku account. If not, check out this [tutorial](http://ruby.railstutorial.org/chapters/beginning?version=3.2#sec:1.4.1)) 
+
+    $ heroku create --stack cedar
+    $ git push heroku master
+
 
 
