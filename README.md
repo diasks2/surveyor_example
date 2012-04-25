@@ -69,6 +69,8 @@ In the production.rb file (located in config/environments) set:
 
      config.assets.compile = true
 
+* this is due to [open issue #307](https://github.com/NUBIC/surveyor/issues/307)
+
 Then, in the command line:
 
     $ git add .
