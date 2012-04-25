@@ -81,6 +81,14 @@ Then, in the command line:
     $ heroku run rake surveyor FILE=surveys/kitchen_sink_survey.rb
     $ heroku open
 
-Now navigate to http://[yourappname].herokuapp.com/surveys    
+Now navigate to http://[yourappname].herokuapp.com/surveys
+
+13) Try making your own survey
+
+Create a new file in the surveys folder of your project, name it 'my_survey.rb' and edit it as you like.
+
+14) Parse the survey
+
+    $ bundle exec rake surveyor FILE=surveys/my_survey.rb  
 
 
