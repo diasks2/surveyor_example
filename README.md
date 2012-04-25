@@ -77,5 +77,8 @@ Then, in the command line:
     $ git push heroku
     $ heroku run rake db:migrate
     $ heroku run rake surveyor FILE=surveys/kitchen_sink_survey.rb
+    $ heroku open
+
+Now navigate to http://[yourappname].herokuapp.com/surveys    
 
 
