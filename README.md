@@ -65,6 +65,12 @@ And visit: [http://localhost:3000/surveys](http://localhost:3000/surveys)
 
 12) Deploy and test it on Heroku
 
+In the production.rb file (located in config/environments) set:
+
+     config.assets.compile = true
+
+Then, in the command line:
+
     $ git add .
     $ git commit -am "Installed surveyor assets"
     $ git push
