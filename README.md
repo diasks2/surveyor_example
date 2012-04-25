@@ -7,6 +7,8 @@ This tutorial is to help Rails beginners implement and extend this gem in their 
 #Surveyor Tutorial
 - - -
 
+###Section 1 - Create a new rails app and get the 'kitchen sink' survey working
+
 1) Create a new repository on [GitHub](https://github.com) named 'surveyor_example'
 
 2) Create a new rails project
@@ -85,6 +87,8 @@ Now navigate to http://[yourappname].herokuapp.com/surveys
 
 you can visit the example for this tutorial here: [http://surveyor-example.herokuapp.com/surveys](http://surveyor-example.herokuapp.com/surveys)
 
+###Section 2 - Create your own survey
+
 13) Try making your own survey
 
 Create a new file in the surveys folder of your project, name it 'my_survey.rb' and edit it as you like.
@@ -105,5 +109,9 @@ And visit: [http://localhost:3000/surveys](http://localhost:3000/surveys)
     $ heroku open
 
 Now navigate to http://[yourappname].herokuapp.com/surveys
+
+###Section 3 - Add a user model
+
+Coming soon...
 
 
