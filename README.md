@@ -112,6 +112,56 @@ Now navigate to http://[yourappname].herokuapp.com/surveys
 
 ###Section 3 - Add a user model
 
-17)
+17) Create a Users controller
+
+    $ rails generate controller Users new
+
+18) Generate a User model
+
+    $ rails generate model User name:string email:string
+
+19) Migrate the new model
+
+    $ bundle exec rake db:migrate
+
+20) Add some basic validations to the User model
+
+    class User < ActiveRecord::Base
+      attr_accessible :email, :name
+
+      before_save { |user| user.email = email.downcase }
+
+      validates :name,  presence: true, length: { maximum: 50 }
+      VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+      validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
+                    uniqueness: { case_sensitive: false }
+    end
+
+21) Add an index to the user email
+
+    $ rails generate migration add_index_to_users_email
+
+22) Navigate to the db/migrate folder and open the file that was just created db/migrate/[timestamp]_add_index_to_users_email.rb and edit it like below
+
+    class AddIndexToUsersEmail < ActiveRecord::Migration
+      def change
+        add_index :users, :email, unique: true
+      end
+    end  
+
+23) Migrate the database
+
+    $ bundle exec rake db:migrate 
+
+24) Open the rails console and create a new user
+ 
+    $ rails console
+    >> User.create(name: "Your Name", email: "yourname@example.com")
+
+25) Commit the changes
+  
+    $ git add .
+    $ git commit -m "A basic User model"
+
 
 

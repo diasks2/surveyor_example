@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120425000563) do
+ActiveRecord::Schema.define(:version => 20120426233439) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -165,6 +165,15 @@ ActiveRecord::Schema.define(:version => 20120425000563) do
   end
 
   add_index "surveys", ["access_code"], :name => "surveys_ac_idx", :unique => true
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
   create_table "validation_conditions", :force => true do |t|
     t.integer  "validation_id"
