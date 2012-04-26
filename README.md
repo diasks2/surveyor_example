@@ -112,6 +112,6 @@ Now navigate to http://[yourappname].herokuapp.com/surveys
 
 ###Section 3 - Add a user model
 
-Coming soon...
+17)
 
 
