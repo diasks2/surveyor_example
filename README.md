@@ -127,14 +127,18 @@ Now navigate to http://[yourappname].herokuapp.com/surveys
 20) Add some basic validations to the User model
 
     class User < ActiveRecord::Base
-      attr_accessible :email, :name
+      attr_accessible :name, :email, :password, :password_confirmation
+      has_secure_password
 
       before_save { |user| user.email = email.downcase }
 
-      validates :name,  presence: true, length: { maximum: 50 }
+      validates :name, presence: true, length: { maximum: 50 }
       VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-      validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
+      validates :email, presence:   true,
+                    format:     { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
+      validates :password, length: { minimum: 6 }
+      validates :password_confirmation, presence: true
     end
 
 21) Add an index to the user email
@@ -149,19 +153,50 @@ Now navigate to http://[yourappname].herokuapp.com/surveys
       end
     end  
 
-23) Migrate the database
+23) Add password_digest to the model
+
+    $ rails generate migration add_password_digest_to_users password_digest:string    
+
+24) Migrate the database
 
     $ bundle exec rake db:migrate 
 
-24) Open the rails console and create a new user
+25) Open the rails console and create a new user
  
     $ rails console
-    >> User.create(name: "Your Name", email: "yourname@example.com")
+    >> User.create(name: "Your Name", email: "yourname@example.com",
+    ?> password: "foobar", password_confirmation: "foobar")
 
-25) Commit the changes
+26) Commit the changes
   
     $ git add .
     $ git commit -m "A basic User model"
+    $ git push
+    $ git push heroku
+
+###Section 4 - Create a sign up and sign in form
+
+27)  Add a Users resource to the routes file
+
+    SurveyorExample::Application.routes.draw do
+      resources :users
+    end
+    
+be sure to remove the line 'get "users/new"'
+
+28) Create a form to sign up new users
+
+Edit this view: app/views/users/new.html.erb
+
+You can copy the code from [this example](https://github.com/diasks2/surveyor_example/blob/master/app/views/users/new.html.erb)
+
+29) Add an @user variable to the new action
+
+    class UsersController < ApplicationController
+      def new
+         @user = User.new
+      end
+    end
 
 
 
