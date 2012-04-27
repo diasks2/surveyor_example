@@ -180,6 +180,9 @@ Now navigate to http://[yourappname].herokuapp.com/surveys
 
     SurveyorExample::Application.routes.draw do
       resources :users
+
+      match '/signup',  to: 'users#new'
+      
     end
     
 be sure to remove the line 'get "users/new"'
