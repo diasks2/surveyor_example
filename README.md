@@ -176,13 +176,13 @@ Now navigate to http://[yourappname].herokuapp.com/surveys
 
 ###Section 4 - Create a sign up and sign in form
 
-27)  Add a Users resource to the routes file
+27)  Add a Users resource to the routes file (config/routes.rb)
 
     SurveyorExample::Application.routes.draw do
       resources :users
 
       match '/signup',  to: 'users#new'
-      
+
     end
     
 be sure to remove the line 'get "users/new"'
