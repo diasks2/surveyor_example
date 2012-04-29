@@ -247,7 +247,48 @@ You can copy the code from [this example](https://github.com/diasks2/surveyor_ex
       end
     end
 
-34) Create a signin view [app/views/sessions/new.html.erb]()
+34) Create a signin view [app/views/sessions/new.html.erb](https://github.com/diasks2/surveyor_example/blob/master/app/views/sessions/new.html.erb)
+
+    <h1>Sign in</h1>
+
+    <%= form_for(:session, url: sessions_path) do |f| %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+    <%= f.submit "Sign in" %>
+    <% end %>
+
+35) Update the SessionsController
+
+36) Update the ApplicationController
+
+37) Generate remember token
+
+    $ rails generate migration add_remember_token_to_users
+
+38) Add the remember token to the users table (db/migrate/[timestamp]_add_remember_token_to_users.rb)
+
+    class AddRememberTokenToUsers < ActiveRecord::Migration
+      def change
+        add_column :users, :remember_token, :string
+        add_index  :users, :remember_token
+      end
+    end    
+
+39) Migrate the database
+
+    $ bundle exec rake db:migrate
+
+40) Update the user model
+
+41) Add a SessionsHelper
+
+    
+
 
 
 
