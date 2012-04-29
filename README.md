@@ -234,7 +234,21 @@ You can copy the code from [this example](https://github.com/diasks2/surveyor_ex
       match '/signout', to: 'sessions#destroy', via: :delete
     end
 
-33)    
+33) Add a new, create and destroy method to the SessionsController [app/controllers/sessions_controller.rb](https://github.com/diasks2/surveyor_example/blob/master/app/controllers/sessions_controller.rb)
+
+    class SessionsController < ApplicationController
+      def new
+      end
+
+      def create
+      end
+
+      def destroy
+      end
+    end
+
+34) Create a signin view [app/views/sessions/new.html.erb]()
+
 
 
 
