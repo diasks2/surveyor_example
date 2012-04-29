@@ -215,11 +215,26 @@ You can copy the code from [this example](https://github.com/diasks2/surveyor_ex
 
     end
 
-30) Add a page to show user info at [app/views/users/show.html.erb]()
+30) Add a page to show user info at [app/views/users/show.html.erb](https://github.com/diasks2/surveyor_example/blob/master/app/views/users/show.html.erb)
 
     <%= @user.name %>, <%= @user.email %>
 
+31) Generate a Sessions Controller
 
+    $ rails generate controller Sessions
+
+32) Update the [config/routes.rb](https://github.com/diasks2/surveyor_example/blob/master/config/routes.rb) file:
+
+    SurveyorExample::Application.routes.draw do
+      resources :users
+      resources :sessions, only: [:new, :create, :destroy]
+
+      match '/signup',  to: 'users#new'
+      match '/signin',  to: 'sessions#new'
+      match '/signout', to: 'sessions#destroy', via: :delete
+    end
+
+33)    
 
 
 
