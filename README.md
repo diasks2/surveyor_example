@@ -193,13 +193,37 @@ Edit this view: app/views/users/new.html.erb
 
 You can copy the code from [this example](https://github.com/diasks2/surveyor_example/blob/master/app/views/users/new.html.erb)
 
-29) Add an @user variable to the new action
+29) Update the UsersController
 
     class UsersController < ApplicationController
       def new
          @user = User.new
       end
+
+      def show
+         @user = User.find(params[:id])
+      end
+
+      def create
+        @user = User.new(params[:user])
+        if @user.save
+          redirect_to @user
+        else
+          render 'new'
+        end
+      end
+
     end
+
+30) Add a page to show user info at [app/views/users/show.html.erb]()
+
+    <%= @user.name %>, <%= @user.email %>
+
+
+
+
+
+
 
 
 
